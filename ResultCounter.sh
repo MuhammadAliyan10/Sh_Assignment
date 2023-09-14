@@ -30,7 +30,8 @@ echo "Total number is $sum" ;;
 echo -e "Enter total number : \c"
 read tnumber
 #To get the persentage of the result
-persentage=$(awk "BEGIN { pc=100*${sum}/${tnumber}; i=int(pc) ; print (pc-i<0.5)?i:i+1}")
+#persentage=$(awk "BEGIN { pc=100*${sum}/${tnumber}; i=int(pc) ; print (pc-i<0.5)?i:i+1}")
+persentage=$(awk "BEGIN {printf \"%.2f\", ($sum / $tnumber * 100)}")
 echo "The persentage is $persentage%.";;
 "h" )
 echo "The amount of total subject is ${#marks[@]}."
