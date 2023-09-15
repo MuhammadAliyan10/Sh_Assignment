@@ -21,15 +21,17 @@ then
 echo "Please write extension!"
 exit 1
 fi
+#use to get the filename without extension
 file_without_extension=${fileName%.*}
+#use to get the extension without name
 file_extension=${fileName##*.}
-if [ $file_extension = "txt" -a "html" -a "sh" -a $extension ]
+if [ $file_extension =  $extension ]
 then
 echo "File has already extension"
 exit 1
 else
 
-newFile="$fileName.$extension"
+newFile="$file_without_extension.$extension"
 mv $fileName $newFile
 echo "The file $fileName renamed to $newFile"
 fi
