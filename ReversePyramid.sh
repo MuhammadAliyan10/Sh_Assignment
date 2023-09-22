@@ -3,7 +3,7 @@
 echo -e "Enter the number of pyramid : \c"
 read num
 
-if [[ $num =~ ^[1-9]+$ ]]
+if [[ $num =~ ^[0-9]+$ ]]
 then
 for ((i=num;i>=1;i--))
 do

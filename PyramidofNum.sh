@@ -5,7 +5,7 @@ read num
 
 
 
-if [[ $num =~ ^[1-9]+$ ]]
+if [[ $num =~ ^[0-9]+$ ]]
 then
 #For row
 

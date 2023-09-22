@@ -1,28 +1,19 @@
 #! /usr/bin/bash
 
+url=$1
 
-if [ $# -ne 1 ]
+if [ $# -eq 0 ]
 then
-echo "You can only pass one url at one time!"
-exit 1
-elif [ $# -lt 1 ]
+echo "Please provide an argument."
+elif [ $# -eq 1 ]
 then
-echo "Please write something!"
-exit 1
-fi
-
-url="$1"
-
-responce=$(curl -Is "$url" | head -n 1)
-
-
-if [[ "$responce" == "200 OK" ]]
+response=$(curl -Is --max-time 10 $url | head -n 1 | awk '{print $2}')
+if [ "$response" == "200" ]
 then
-echo "Given url($url) is working."
-echo "The status is $responce"
-exit 0
+echo "The $url is working with the status $response."
 else
-echo "Failed to execute the url($url)."
-echo "The status is $responce."
-exit 1
+echo "Provided $url is not working."
+fi
+else
+echo "You can only pass one argument at on time."
 fi

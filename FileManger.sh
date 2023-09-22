@@ -4,7 +4,6 @@ echo "Wellcome In file system"
 
 echo "How my I help you?"
 
-function menu(){
 
 echo "Press 0 to print your working directory."
 echo "Press 1 to get the list of file/folder in pwd."
@@ -19,9 +18,7 @@ echo "Press 9 to check your processing"
 echo "Press q to exit"
 echo -e "Chose the opreation : \c"
 read command
-}
 
-menu
 
 
 
@@ -29,8 +26,7 @@ if [[ $command >=0 && $command <=9 ]]
 then 
  case $command in
  "0" )
-  pwd 
-  menu ;;
+  pwd ;;
   "1" )
   ls ;;
 
@@ -61,8 +57,7 @@ then
     else
     mkdir $folderName
     echo "Folder $folderName has been created successfully" 
-    fi 
-    menu ;;
+    fi ;;
     5 )
     echo -e "Enter the name of the folder : \c"
     read foname
