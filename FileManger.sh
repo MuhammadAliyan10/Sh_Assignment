@@ -15,7 +15,6 @@ echo "Press 6 to enter the name of file/folder to check premitions."
 echo "Press 7 to change the permitions of file/folder."
 echo "Press 8 to read data in any file"
 echo "Press 9 to check your processing"
-echo "Press q to exit"
 echo -e "Chose the opreation : \c"
 read command
 
@@ -111,8 +110,6 @@ then
    
     9 )
     top ;;
-    "q" )
-    exit ;;
  * )
  echo "Santax Error"
  esac

@@ -3,10 +3,6 @@
 
 
 
-
-
-
-
 echo "Calculator"
 
 echo -e "Enter first number : \c"
